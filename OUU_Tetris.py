@@ -376,7 +376,7 @@ class Jeu:
                 policy[i] = best_a
             if np.max(np.abs(V - V_old)) < eps:
                 break
-        print("Le gain qu'on peut espérer avec la pièce 1 en début de partie est :", V[0],". \nLe gain qu'on peut espérer avec la pièce 2 en début de partie est :", V[1])
+        print("Le discounted gain qu'on peut espérer avec la pièce 1 en début de partie est :", V[0],". \nLe discounted gain qu'on peut espérer avec la pièce 2 en début de partie est :", V[1])
         return V, policy
 
 
@@ -416,4 +416,5 @@ class Jeu:
 
 H = 4
 ma_partie = Jeu(H)
+
 V, policy = ma_partie.Value_iteration()
